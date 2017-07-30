@@ -1,3 +1,4 @@
+ruby '2.4.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -14,6 +15,9 @@ gem 'pg'
 
 # API version
 gem 'versionist'
+
+# facebook integration
+gem 'koala'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

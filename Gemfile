@@ -12,6 +12,7 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'pg'
+gem 'active_model_serializers', '~> 0.10.0'
 
 # API version
 gem 'versionist'

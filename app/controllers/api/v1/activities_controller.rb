@@ -1,6 +1,6 @@
 class Api::V1::ActivitiesController < Api::V1::BaseController
   def index
-    @activities = Activity.includes(:user).where('created_at > ?', Time.now - 10.day).all
+    @activities = Activity.includes(:user).where('created_at > ?', Time.now - 1.day).all
     render json: @activities
   end
 

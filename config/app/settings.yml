@@ -1,0 +1,12 @@
+defaults: &defaults
+  actual_period: <%= 1.day %>
+
+development:
+  <<: *defaults
+  actual_period: <%= 10.days %>
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -15,6 +15,9 @@ gem 'pg'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'faker'
 gem 'settingslogic'
+gem 'figaro'
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 
 # API version
 gem 'versionist'

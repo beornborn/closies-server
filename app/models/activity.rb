@@ -1,4 +1,6 @@
 class Activity < ApplicationRecord
+  mount_uploader :image, ActivityImageUploader
+
   COLORS = ['#0000ff', '#ff7f00', '#00ff00', '#9400d3','#ffff00'].freeze
 
   belongs_to :user

@@ -12,6 +12,6 @@ class Api::V1::ActivitiesController < Api::V1::BaseController
   private
 
   def activity_params
-    params.require(:activity).permit(:longitude, :latitude, :user_id, :description)
+    params.permit(:longitude, :latitude, :user_id, :description, :image)
   end
 end

@@ -5,7 +5,7 @@ class Api::V1::ActivitiesController < Api::V1::BaseController
   end
 
   def create
-    Activity.create(activity_params.merge({color: current_user.color}))
+    CreateActivityService.new(activity_params).call
     render json: {}
   end
 

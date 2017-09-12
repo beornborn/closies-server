@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :users, only: [] do
       get :current, on: :collection
     end
+    resources :groups, only: [:create]
+    resources :invites, only: [:create] do
+      post :accept, on: :collection
+    end
   end
 end

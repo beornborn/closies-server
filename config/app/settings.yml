@@ -1,5 +1,6 @@
 defaults: &defaults
   actual_period: <%= 1.day %>
+  invite_valid_for: <%= 7.day %>
   size_limits:
     family: <%= 20 %>
     closies: <%= 7 %>

@@ -11,11 +11,15 @@ class SeedService
     create_activities
   end
 
-  def reseed
+  def delete
     Activity.delete_all
     User.delete_all
     Group.delete_all
     UserInGroup.delete_all
+  end
+
+  def reseed
+    delete
     seed
   end
 

@@ -21,7 +21,6 @@ class LoginService
         locale: user_data['locale'],
         facebook_link: user_data['link'],
         facebook_id: user_data['id'],
-        color: Activity::COLORS.first,
       })
     end
   end

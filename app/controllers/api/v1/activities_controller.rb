@@ -1,7 +1,7 @@
 class Api::V1::ActivitiesController < Api::V1::BaseController
   def index
-    @activities = Activity.includes(:user).where('created_at > ?', Time.now - Settings.actual_period).all
-    render json: @activities
+    @activities = Activity.includes(user_in_group: [:user, :group]).where('created_at > ?', Time.now - Settings.actual_period).all
+    render json: @activities, include: ['user_in_group.group', 'user_in_group.user']
   end
 
   def create

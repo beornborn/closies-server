@@ -1,5 +1,9 @@
 defaults: &defaults
   actual_period: <%= 1.day %>
+  size_limits:
+    family: <%= 20 %>
+    closies: <%= 7 %>
+    special: <%= 2 %>
 
 development:
   <<: *defaults

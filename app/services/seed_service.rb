@@ -28,8 +28,7 @@ class SeedService
   def create_users
     User.create({
       email: 'beornborn@gmail.com',
-      first_name: 'Oleg',
-      last_name: 'Gorbunov',
+      full_name: 'Oleg Gorbunov',
       gender: 'male',
       picture: 'https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/19224813_1313697128679118_120511216321167899_n.jpg?oh=77f9955176fd849e2a774c74648679ea&oe=5A222FCC',
       facebook_id: '1352027368179427',
@@ -39,8 +38,7 @@ class SeedService
     28.times do |i|
       User.create({
         email: Faker::Internet.email,
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
+        full_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
         picture: Faker::Avatar.image(i + 5, '50x50')
       })
     end

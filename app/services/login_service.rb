@@ -14,8 +14,7 @@ class LoginService
     else
       User.create({
         email: user_data['email'],
-        first_name: user_data['first_name'],
-        last_name: user_data['last_name'],
+        full_name: "#{user_data['first_name']} #{user_data['last_name']}",
         gender: user_data['gender'],
         picture: user_data['picture']['data']['url'],
         locale: user_data['locale'],

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :activities, only: [:index, :create]
     resources :users, only: [] do
       get :current, on: :collection
+      put :update, on: :collection
     end
     resources :groups, only: [:create]
     resources :invites, only: [:create] do

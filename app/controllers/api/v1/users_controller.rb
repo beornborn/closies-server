@@ -11,6 +11,6 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
   def update_params
-    params.permit(:full_name, :phone_number)
+    params.require(:user).permit(:full_name, :phone_number, messengers: [])
   end
 end

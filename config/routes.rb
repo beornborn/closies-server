@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resource :dev, controller: 'dev', only: [] do
       get :check, on: :collection
     end
+    resource :config, controller: 'config', only: [:show]
     resource :auth, controller: 'auth', only: [] do
       post :login, on: :collection
       post :logout, on: :collection
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
       get :current, on: :collection
       put :update, on: :collection
     end
-    resources :groups, only: [:create]
+    resources :groups, only: [:index, :create]
     resources :invites, only: [:create] do
       post :accept, on: :collection
     end

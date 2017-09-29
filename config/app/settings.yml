@@ -5,10 +5,14 @@ defaults: &defaults
     family: <%= 20 %>
     closies: <%= 7 %>
     special: <%= 2 %>
+  size_type_counts:
+    family: <%= 1 %>
+    closies: <%= 2 %>
+    special: <%= 3 %>
 
 development:
   <<: *defaults
-  actual_period: <%= 10.days %>
+  actual_period: <%= 100.days %>
 
 test:
   <<: *defaults

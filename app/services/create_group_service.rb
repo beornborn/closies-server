@@ -5,7 +5,7 @@ class CreateGroupService
   end
 
   def call
-    group = Group.create(params)
-    UserInGroups.create(user: @user, group: @group, owner: true)
+    group = Group.create(@params)
+    UserInGroup.create(user: @user, group: group, owner: true)
   end
 end

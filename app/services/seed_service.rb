@@ -67,11 +67,11 @@ class SeedService
     veronika = Group.find_by(name: 'Veronika')
     bogdan = Group.find_by(name: 'Bogdan')
 
-    @users[0..19].each {|u| UserInGroup.create group: family, user: u }
-    ([@users[0]] + @users[20..25]).each {|u| UserInGroup.create group: friends, user: u }
-    ([@users[0], @users[26]]).each {|u| UserInGroup.create group: lena, user: u }
-    ([@users[0], @users[27]]).each {|u| UserInGroup.create group: veronika, user: u }
-    ([@users[0], @users[28]]).each {|u| UserInGroup.create group: bogdan, user: u }
+    @users[0..19].each.with_index {|u, i| UserInGroup.create group: family, user: u, owner: i == 0 }
+    ([@users[0]] + @users[20..25]).each.with_index {|u, i| UserInGroup.create group: friends, user: u, owner: i == 0 }
+    ([@users[0], @users[26]]).each.with_index {|u, i| UserInGroup.create group: lena, user: u, owner: i == 0 }
+    ([@users[0], @users[27]]).each.with_index {|u, i| UserInGroup.create group: veronika, user: u, owner: i == 0 }
+    ([@users[0], @users[28]]).each.with_index {|u, i| UserInGroup.create group: bogdan, user: u, owner: i == 0 }
 
     ap '------------- user-in-groups created'
   end

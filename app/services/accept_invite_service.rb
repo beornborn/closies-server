@@ -14,7 +14,7 @@ class AcceptInviteService
     else
       Invite.update(user: @user)
       UserInGroup.create(user_id: @user.id, group_id: invite.group_id)
+      invite
     end
-    {}
   end
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :current, on: :collection
       put :update, on: :collection
     end
-    resources :groups, only: [:index, :create]
+    resources :groups, only: [:index, :create, :destroy]
     resources :invites, only: [:create] do
       post :accept, on: :collection
     end

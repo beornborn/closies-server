@@ -1,7 +1,7 @@
 class UserInGroup < ApplicationRecord
   belongs_to :group
   belongs_to :user
-  has_many :activities
+  has_many :activities, dependent: :destroy
 
   before_create :set_color
 

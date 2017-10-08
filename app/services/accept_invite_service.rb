@@ -5,7 +5,7 @@ class AcceptInviteService
   end
 
   def call
-    invite = Invite.find_by(token: token)
+    invite = Invite.find_by(token: @token)
 
     if !invite
       return {error: 'Invalid invitation token'}

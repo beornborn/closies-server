@@ -5,6 +5,8 @@ class UserInGroup < ApplicationRecord
 
   before_create :set_color
 
+  scope :owner, -> { where(owner: true) }
+
   def set_color
     self.color = Activity::COLORS[group.users.count % Activity::COLORS.size]
   end

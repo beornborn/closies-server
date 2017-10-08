@@ -12,7 +12,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  actual_period: <%= 100.days %>
+  actual_period: <%= 1.hour %>
 
 test:
   <<: *defaults

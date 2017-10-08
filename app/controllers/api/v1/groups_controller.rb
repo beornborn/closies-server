@@ -8,7 +8,7 @@ class Api::V1::GroupsController < Api::V1::BaseController
   end
 
   def destroy
-    DestroyGroupService.new(@group).call
+    DestroyGroupService.new(@group, current_user).call
     render json: {}
   end
 

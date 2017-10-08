@@ -5,13 +5,13 @@ class Api::V1::ActivitiesController < Api::V1::BaseController
   end
 
   def create
-    CreateActivityService.new(activity_params).call
+    CreateActivityService.new(create_activity_params, current_user).call
     render json: {}
   end
 
   private
 
-  def activity_params
-    params.permit(:longitude, :latitude, :user_in_group_id, :description, :image)
+  def create_activity_params
+    params.permit(:longitude, :latitude, :description, :image, group_ids: [])
   end
 end

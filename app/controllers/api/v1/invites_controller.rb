@@ -20,6 +20,6 @@ class Api::V1::InvitesController < Api::V1::BaseController
   end
 
   def invite_accept_params
-    params.permit(:invitation_token)
+    params.require(:invite).permit(:token)
   end
 end

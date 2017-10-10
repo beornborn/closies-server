@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170915060232) do
+ActiveRecord::Schema.define(version: 20171010143603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170915060232) do
     t.string "description"
     t.string "image"
     t.bigint "user_in_group_id"
+    t.integer "checked", default: [], array: true
     t.index ["user_in_group_id"], name: "index_activities_on_user_in_group_id"
   end
 

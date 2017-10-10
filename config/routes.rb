@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       post :login, on: :collection
       post :logout, on: :collection
     end
-    resources :activities, only: [:index, :create]
+    resources :activities, only: [:index, :create] do
+      post :check, on: :member
+    end
     resources :users, only: [] do
       get :current, on: :collection
       put :update, on: :collection

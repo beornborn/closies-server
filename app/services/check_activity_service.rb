@@ -5,7 +5,14 @@ class CheckActivityService
   end
 
   def call
-    new_checked = (@activity.checked + [@user.id]).uniq
-    @activity.update(checked: new_checked)
+    unless @activity.checked.include? @user.id
+      @activity.update(checked: @activity.checked + [@user.id])
+    end
+
+    @activity.comments.each do |comment|
+      unless comment.checked.include? @user.id
+        comment.update(checked: comment.checked + [@user.id])
+      end
+    end
   end
 end

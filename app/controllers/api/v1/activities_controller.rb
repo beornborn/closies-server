@@ -2,8 +2,8 @@ class Api::V1::ActivitiesController < Api::V1::BaseController
   before_action :set_activity, only: :check
 
   def index
-    @activities = Activity.includes(user_in_group: [:user]).where('created_at > ?', Time.now - Settings.actual_period).all
-    render json: @activities, include: ['user_in_group.user']
+    @activities = Activity.includes(comments: [:user], user_in_group: [:user]).where('created_at > ?', Time.now - Settings.actual_period).all
+    render json: @activities, include: ['user_in_group.user', 'comments.user']
   end
 
   def create

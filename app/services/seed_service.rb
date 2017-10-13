@@ -17,6 +17,7 @@ class SeedService
     Group.delete_all
     UserInGroup.delete_all
     Invite.delete_all
+    Comment.delete_all
   end
 
   def reseed

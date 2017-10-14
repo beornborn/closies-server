@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :activities, only: [:index, :create] do
       post :check, on: :member
     end
+    resources :comments, only: [:create]
     resources :users, only: [] do
       get :current, on: :collection
       put :update, on: :collection
